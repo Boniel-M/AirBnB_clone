@@ -1,22 +1,25 @@
 #!/usr/bin/python3
 
 import json
+=======
+"""console"""
+
 import cmd
 from models.base_model import BaseModel
 import models.__init__
 from models import storage
 
-class HBNBCommand(cmd.Cmd):
-    '''Entry point'''
 
+class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
-        '''Quit command to exit the program'''
+        """Quit command to exit the program"""
         return True
 
     def do_EOF(self, arg):
-        """Quit when Ctr+z is hit"""
+        """Exit the program on EOF (Ctrl+D)"""
+        print()  # Print a newline for better output formatting
         return True
 
     def emptyline(self):
@@ -30,6 +33,8 @@ class HBNBCommand(cmd.Cmd):
             FileStorage.save()
             print(base.id)
     
+        """Do nothing when an empty line is entered"""
+        pass
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
