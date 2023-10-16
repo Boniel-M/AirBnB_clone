@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 
-import json
-=======
 """console"""
 
 import cmd
+import json
 from models.base_model import BaseModel
 import models.__init__
 from models import storage
