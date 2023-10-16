@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+
 """console"""
 
+<<<<<<< HEAD
+=======
+import cmd
+import json
+from models.base_model import BaseModel
+import models.__init__
+from models import storage
+>>>>>>> 1487de518b601d077bb6f0f1754e08dcd4422411
 
 import cmd
 from models import storage
@@ -18,6 +27,16 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """Overrides the default empty line. Empty line executes nothing"""
+
+    def do_create(self, arg):
+        """Creates a new instance of BaseModel, saves it(to the JSON file) and prints it"""
+        base1 = BaseModel()
+        FileStorage.new()
+        with open(FileStorage._file, "w") as file:
+            FileStorage.save()
+            print(base.id)
+    
         """Do nothing when an empty line is entered"""
         pass
 
